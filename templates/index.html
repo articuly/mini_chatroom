@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<body>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <div class="alert alert-info" role="alert">欢迎天下的朋友！</div>
+                <h1 class="text-center">欢迎进入因缘相见聊天室</h1>
+                {% if not username %}
+                    <h3 class="text-center">您可以<a href="{{ url_for('user_app.register') }}">注册</a>一个账号进入聊天室</h3>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
+

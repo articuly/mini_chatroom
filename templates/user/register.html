@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{# 解决多选框贴近的问题 #}
+{% block style %}
+    input[name="hobby"]{
+    margin-right: 20px;
+    }
+{% endblock %}
+<body>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <h2 class="text-center"><b>用户注册</b></h2>
+                {% if message %}
+                    <div class="alert alert-info" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                <div class="body">
+                    <form action="" method="post">
+                        {% for field in form %}
+                            {# 隐藏域元素不用显示label #}
+                            {% if field.widget.input_type!="hidden" %}
+                                <div class="form-group">
+                                    {{ field.label }}
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <div class="alert alert-warning alert-dismissible" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
+                                            <strong>注意! </strong>
+                                            {{ field.errors }}
+                                        </div>
+                                        </div>
+                                    {% endif %}
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block style %}
+    input[name="hobby"]{
+    margin-right: 20px;
+    }
+{% endblock %}
+<body>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <h2 class="text-center"><b>用户信息修改</b></h2>
+                <div class="body">
+                    {% if message!=None %}
+                        <div class="alert alert-info" id="message" role="alert">{{ message }}</div>
+                    {% endif %}
+                    {# 普通表单提交要写FORM标签和提交方法，AJAX可不用 #}
+                    <form action="" method="post">
+                        {% for field in form %}
+                            {% if field.widget.input_type!='hidden' %}
+                                <div class="form-group">
+                                    {{ field.label }}
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <div class="alert alert-warning alert-dismissable" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
+                                            <strong>注意! </strong>
+                                            {{ field.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" name="submit" id="btn1" value="修改信息"/>
+                            <input class="btn btn-primary" type="reset" name="reset" id="btn2" value="重设"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename="ckeditor/ckeditor.js") }}"></script>
+{% endblock %}
+</body>
+</html>
