@@ -1,0 +1,72 @@
+{% extends'base.html' %}
+<!DOCTYPE html>
+<html>
+<body>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <h2 class="text-center"><b>因缘相见聊天室</b></h2>
+                <div class="col-xs-9" id="message-table">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                        <tr>
+                            <th style="width: 15%">
+                                发送人
+                            </th>
+                            <th style="width: 15%">
+                                接收人
+                            </th>
+                            <th style="width: 70%">
+                                消息内容
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>TB - Monthly</td>
+                            <td>Default</td>
+                        </tr>
+                        <tr class="success">
+                            <td>1</td>
+                            <td>TB - Monthly</td>
+                            <td>Approved</td>
+                        </tr>
+                        <tr class="error">
+                            <td>2</td>
+                            <td>TB - Monthly</td>
+                            <td>Declined</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>3</td>
+                            <td>TB - Monthly</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr class="info">
+                            <td>4</td>
+                            <td>TB - Monthly</td>
+                            <td>Call in to confirm</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-3" id="user-list">
+                    <ul class="list-group">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="sender">alk;jsdjfa;wlejfa;olisej
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

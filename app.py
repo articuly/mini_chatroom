@@ -3,6 +3,7 @@ from libs import db
 from models import User
 from settings import config
 from views.users import user_app
+from views.chatroom import chat_app
 from forms.account_form import LoginForm
 
 # 实例化Flask
@@ -14,6 +15,7 @@ db.init_app(app)
 
 # 注册蓝图功能
 app.register_blueprint(user_app, url_prefix='/user')
+app.register_blueprint(chat_app, url_prefix='/chat')
 
 
 @app.route('/')
