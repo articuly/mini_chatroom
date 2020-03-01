@@ -82,3 +82,4 @@ if __name__ == '__main__':
 
 # admin, articuly密码为123654
 # artic和其它随机用户密码为123456
+# 使用virtualenv虚拟环境，sqlite为数据库
