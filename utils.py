@@ -49,10 +49,18 @@ def random_message(n):
     words = list('abcdefghijklmnopqrstuvwxyz')
     for i in range(n):
         random.shuffle(words)
-        username = ''.join(words[:6])
-        message = Message(
-            from_user=username,
-            content='{0} is talking some random word and saying hello to the world.'
+        content1 = ''.join(words[:6])
+        username1 = 'admin'
+        message1 = Message(
+            from_user=username1,
+            content='{0} is talking some random word {1}.'.format(username1, content1)
         )
-        db.session.add(message)
+        db.session.add(message1)
+        content2 = ''.join(words[-6:])
+        username2 = 'articuly'
+        message2 = Message(
+            from_user=username2,
+            content='{0} is talking some random word {1}.'.format(username2, content2)
+        )
+        db.session.add(message2)
     db.session.commit()

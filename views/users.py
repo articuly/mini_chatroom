@@ -1,5 +1,5 @@
 from flask import redirect, url_for, render_template, session
-from libs import db
+from libs import db, login_required
 from models import User
 from flask import Blueprint
 from forms.account_form import RegisterForm, EditInfoForm
@@ -53,6 +53,7 @@ def validate_username(username):
 
 # 会员修改自己的信息，普通会员只能修改自己的资料
 @user_app.route("/edit_info/", methods=['get', 'post'])
+@login_required
 def edit_info():
     message = None
     form = EditInfoForm()
